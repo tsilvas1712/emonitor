@@ -33,7 +33,7 @@ RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd sockets
 # Install PHP SQLServer
 RUN pecl install sqlsrv pdo_sqlsrv
 
-COPY .docker/config/php.ini /usr/local/etc/php/
+COPY docker/config/php.ini /usr/local/etc/php/
 
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
