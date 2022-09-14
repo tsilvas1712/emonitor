@@ -7,7 +7,7 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-        image: emonitor/emonitor-app
+        image: tsnetwork/emonitor
         restart: unless-stopped
         working_dir: /var/www/
         volumes:
@@ -23,7 +23,7 @@ services:
         image: nginx:alpine
         restart: unless-stopped
         ports:
-            - "8000:80"
+            - "8002:80"
         volumes:
             - ./:/var/www
             - ./docker/nginx/:/etc/nginx/conf.d/
@@ -50,7 +50,7 @@ services:
     # queue
     queue:
         container_name: emonitor-queue
-        image: emonitor/emonitor-app
+        image: tsnetwork/emonitor
         restart: unless-stopped
         command: "php artisan queue:work"
         volumes:

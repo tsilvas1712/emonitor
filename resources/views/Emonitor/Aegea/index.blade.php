@@ -7,6 +7,9 @@
 @stop
 
 @section('content')
+<h1>Total de Registros: {{ $countRegisters }}</h1>
+<h1>Total de Telefone Fixos: {{ $telefoneFixo }}</h1>
+<h1>Total de Telefones Moveis: {{ $telefoneMovel }}</h1>
 <table class="table">
     <thead class="thead-dark">
       <tr>
