@@ -52,7 +52,20 @@ services:
         container_name: emonitor-queue
         image: tsnetwork/emonitor
         restart: unless-stopped
-        command: "php artisan queue:work"
+        command: "php artisan horizon"
+        volumes:
+            - ./:/var/www
+        depends_on:
+            - redis
+            - app
+        networks:
+            - e-monitor
+    # schedule
+    schedule:
+        container_name: emonitor-schedule
+        image: tsnetwork/emonitor
+        restart: unless-stopped
+        command: "php artisan schedule:work"
         volumes:
             - ./:/var/www
         depends_on:

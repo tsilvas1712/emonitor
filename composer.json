@@ -10,12 +10,14 @@
         "guzzlehttp/guzzle": "^7.2",
         "jeroennoten/laravel-adminlte": "^3.8",
         "laravel/framework": "^9.0",
+        "laravel/horizon": "^5.10",
         "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.0",
         "nesbot/carbon": "^2.62"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.7",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",

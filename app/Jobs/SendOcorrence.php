@@ -27,12 +27,8 @@ class SendOcorrence implements ShouldQueue
 
     public function __construct( $ocorrencia)
     {
-
         $this->ocorrencia =$ocorrencia;
-
         $data = $this->ocorrencia;
-
-
     }
 
     /**

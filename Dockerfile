@@ -8,12 +8,16 @@ ARG uid=1000
 RUN apt-get update && apt-get install -y \
     git \
     curl \
+    cron \
     vim   \
     libpng-dev \
     libonig-dev \
     libxml2-dev \
     zip \
     unzip
+
+RUN echo "* * * * * cd /var/www && php artisan schedule:run >> /dev/null 2>&1" >> /etc/crontab
+RUN crontab /etc/crontab
 
 ENV ACCEPT_EULA=Y
 RUN apt-get update && apt-get install -y gnupg2
@@ -49,5 +53,8 @@ RUN pecl install -o -f redis \
 
 # Set working directory
 WORKDIR /var/www
+# Create the log file to be able to run tail
+
+
 
 USER $user

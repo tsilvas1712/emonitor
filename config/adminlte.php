@@ -235,7 +235,7 @@ return [
         ],
         [
             'text' => 'Ocorrências',
-            'url'  => 'admin/settings',
+            'url'  => '/ocorrences',
             'icon' => 'fas fa-fw fa-tag',
         ],
 

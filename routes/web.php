@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EMonitor\AegeaController;
+use App\Http\Controllers\EMonitor\OcorrenceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ Route::get('/', function () {
 });
 
 Route::get('/aegea', [AegeaController::class, 'index']);
+Route::get('/ocorrences',[OcorrenceController::class,'index']);
+Route::get('/ocorrences/{id}',[OcorrenceController::class,'credor'])->name('ocorrences.credor');
 
 Auth::routes();
 
