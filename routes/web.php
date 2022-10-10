@@ -15,14 +15,17 @@ use App\Http\Controllers\EMonitor\OcorrenceController;
 |
 */
 
-Route::get('/', function () {
-    return view('Emonitor.index');
+Route::middleware(['auth'])->group(function(){
+    Route::get('/aegea', [AegeaController::class, 'index']);
+    Route::get('/ocorrences',[OcorrenceController::class,'index']);
+    Route::get('/ocorrences/{id}',[OcorrenceController::class,'credor'])->name('ocorrences.credor');
+
 });
 
-Route::get('/aegea', [AegeaController::class, 'index']);
-Route::get('/ocorrences',[OcorrenceController::class,'index']);
-Route::get('/ocorrences/{id}',[OcorrenceController::class,'credor'])->name('ocorrences.credor');
 
+Auth::routes();
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
