@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/sendUra',[AegeaController::class,'sendOcorrenceUra']);
+Route::get('/sendUra',[AegeaController::class,'sendOcorrenceUraTeste']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

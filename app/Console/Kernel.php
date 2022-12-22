@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Models\Credor;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -18,9 +19,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+
         //$schedule->command('inspire')->hourly();
-        $schedule->command('ura:send')->cron('*/5 8-18 * * 1-5');
-        $schedule->command('sms:send')->cron('*/5 8-18 * * 1-5');
+        $schedule->command('ura:send')->cron('*/5 8-23 * * 1-5');
+        $schedule->command('sms:send')->cron('*/5 8-23 * * 1-5');
     }
 
     /**

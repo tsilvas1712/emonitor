@@ -16,8 +16,8 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip
 
-RUN echo "* * * * * cd /var/www && php artisan schedule:run >> /dev/null 2>&1" >> /etc/crontab
-RUN crontab /etc/crontab
+#RUN echo "* * * * * cd /var/www && php artisan schedule:run >> /dev/null 2>&1" >> /etc/crontab
+#RUN crontab /etc/crontab
 
 ENV ACCEPT_EULA=Y
 RUN apt-get update && apt-get install -y gnupg2

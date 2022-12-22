@@ -8,8 +8,18 @@
 
 @section('content')
     <div class="card">
-        <div class="card-header">
-            <h1>Aguas do Rio</h1>
+        <div class="card-header d-flex justify-content-lg-between">
+            <h1 class="me-auto p-2">Aguas do Rio</h1>
+            <div class="d-flex align-items-center">
+                <form action="">
+                    <div class="form-group ">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+                            <label class="custom-control-label" for="customSwitch1">Cron Ativada</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
         <div class="card-body">
             <table class="table">
